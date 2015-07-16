@@ -10,4 +10,7 @@
 
 @interface WTLScheduleTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *scheduleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrivalTime;
+
 @end

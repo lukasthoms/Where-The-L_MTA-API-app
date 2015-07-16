@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		714F9BA9CD48F1564763B58E /* libPods-WhereTheL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEAEA395A9F3DE03C332B21 /* libPods-WhereTheL.a */; };
+		802F5DA51B554B0C003627C3 /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */; };
 		8073434D1B502B8300A898CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073434C1B502B8300A898CC /* main.m */; };
 		807343501B502B8300A898CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073434F1B502B8300A898CC /* AppDelegate.m */; };
 		807343531B502B8300A898CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343521B502B8300A898CC /* ViewController.m */; };
@@ -17,6 +18,13 @@
 		807343671B502B8300A898CC /* WhereTheLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343661B502B8300A898CC /* WhereTheLTests.m */; };
 		807343721B50443A00A898CC /* NyctSubwayProtoTxt.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343711B50443A00A898CC /* NyctSubwayProtoTxt.pb.m */; };
 		807343741B504B3300A898CC /* GtfsRealtime.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343731B504B3300A898CC /* GtfsRealtime.pb.m */; };
+		807343781B5050B200A898CC /* WTLConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343771B5050B200A898CC /* WTLConstants.m */; };
+		807343851B506B2D00A898CC /* WTLtransitAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343841B506B2D00A898CC /* WTLtransitAPI.m */; };
+		807343881B51392200A898CC /* WTLStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343871B51392200A898CC /* WTLStation.m */; };
+		8073438B1B51452B00A898CC /* WTLStationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073438A1B51452B00A898CC /* WTLStationManager.m */; };
+		8073438E1B52B44700A898CC /* WTLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073438D1B52B44700A898CC /* WTLLocationManager.m */; };
+		807343911B52FB1900A898CC /* WTLScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343901B52FB1900A898CC /* WTLScheduleTableViewCell.m */; };
+		807343941B53F0D000A898CC /* WTLScheduleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343931B53F0D000A898CC /* WTLScheduleTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,24 @@
 
 /* Begin PBXFileReference section */
 		54DB7F79B0AA0DCDB1080A81 /* Pods-WhereTheL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereTheL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhereTheL/Pods-WhereTheL.debug.xcconfig"; sourceTree = "<group>"; };
+		802F5D7C1B554705003627C3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		802F5D7E1B55470C003627C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		802F5D801B554712003627C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		802F5D821B554718003627C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		802F5D841B554731003627C3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		802F5D861B554737003627C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		802F5D881B554742003627C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		802F5D8A1B554751003627C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		802F5D8C1B554759003627C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		802F5D8E1B554762003627C3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		802F5D901B55476A003627C3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		802F5D921B55476F003627C3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		802F5D941B55478A003627C3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		802F5D951B55478A003627C3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		802F5D961B55478A003627C3 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		802F5D981B55478A003627C3 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		802F5D991B55478A003627C3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
 		807343471B502B8300A898CC /* WhereTheL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereTheL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8073434B1B502B8300A898CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8073434C1B502B8300A898CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,6 +74,20 @@
 		807343711B50443A00A898CC /* NyctSubwayProtoTxt.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NyctSubwayProtoTxt.pb.m; sourceTree = "<group>"; };
 		807343731B504B3300A898CC /* GtfsRealtime.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GtfsRealtime.pb.m; sourceTree = "<group>"; };
 		807343751B504B3C00A898CC /* GtfsRealtime.pb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GtfsRealtime.pb.h; sourceTree = "<group>"; };
+		807343761B5050B200A898CC /* WTLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLConstants.h; sourceTree = "<group>"; };
+		807343771B5050B200A898CC /* WTLConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLConstants.m; sourceTree = "<group>"; };
+		807343831B506B2D00A898CC /* WTLtransitAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLtransitAPI.h; sourceTree = "<group>"; };
+		807343841B506B2D00A898CC /* WTLtransitAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLtransitAPI.m; sourceTree = "<group>"; };
+		807343861B51392200A898CC /* WTLStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLStation.h; sourceTree = "<group>"; };
+		807343871B51392200A898CC /* WTLStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLStation.m; sourceTree = "<group>"; };
+		807343891B51452B00A898CC /* WTLStationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLStationManager.h; sourceTree = "<group>"; };
+		8073438A1B51452B00A898CC /* WTLStationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLStationManager.m; sourceTree = "<group>"; };
+		8073438C1B52B44700A898CC /* WTLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLLocationManager.h; sourceTree = "<group>"; };
+		8073438D1B52B44700A898CC /* WTLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLLocationManager.m; sourceTree = "<group>"; };
+		8073438F1B52FB1900A898CC /* WTLScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLScheduleTableViewCell.h; sourceTree = "<group>"; };
+		807343901B52FB1900A898CC /* WTLScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLScheduleTableViewCell.m; sourceTree = "<group>"; };
+		807343921B53F0D000A898CC /* WTLScheduleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLScheduleTableView.h; sourceTree = "<group>"; };
+		807343931B53F0D000A898CC /* WTLScheduleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLScheduleTableView.m; sourceTree = "<group>"; };
 		AFEAEA395A9F3DE03C332B21 /* libPods-WhereTheL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhereTheL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF56B0769BD100FED3FBC98 /* Pods-WhereTheL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereTheL.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhereTheL/Pods-WhereTheL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +123,23 @@
 		3CE76A82271BA184FA8DBF06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				802F5D941B55478A003627C3 /* Bolts.framework */,
+				802F5D951B55478A003627C3 /* Parse.framework */,
+				802F5D961B55478A003627C3 /* ParseCrashReporting.framework */,
+				802F5D981B55478A003627C3 /* ParseFacebookUtilsV4.framework */,
+				802F5D991B55478A003627C3 /* ParseUI.framework */,
+				802F5D921B55476F003627C3 /* Social.framework */,
+				802F5D901B55476A003627C3 /* Accounts.framework */,
+				802F5D8E1B554762003627C3 /* libsqlite3.dylib */,
+				802F5D8C1B554759003627C3 /* libz.dylib */,
+				802F5D8A1B554751003627C3 /* SystemConfiguration.framework */,
+				802F5D881B554742003627C3 /* Security.framework */,
+				802F5D861B554737003627C3 /* CoreLocation.framework */,
+				802F5D841B554731003627C3 /* MobileCoreServices.framework */,
+				802F5D821B554718003627C3 /* QuartzCore.framework */,
+				802F5D801B554712003627C3 /* CoreGraphics.framework */,
+				802F5D7E1B55470C003627C3 /* StoreKit.framework */,
+				802F5D7C1B554705003627C3 /* AudioToolbox.framework */,
 				AFEAEA395A9F3DE03C332B21 /* libPods-WhereTheL.a */,
 			);
 			name = Frameworks;
@@ -113,12 +170,24 @@
 			children = (
 				8073434E1B502B8300A898CC /* AppDelegate.h */,
 				8073434F1B502B8300A898CC /* AppDelegate.m */,
+				807343761B5050B200A898CC /* WTLConstants.h */,
+				807343771B5050B200A898CC /* WTLConstants.m */,
 				807343511B502B8300A898CC /* ViewController.h */,
 				807343521B502B8300A898CC /* ViewController.m */,
-				807343701B50443A00A898CC /* NyctSubwayProtoTxt.pb.h */,
-				807343711B50443A00A898CC /* NyctSubwayProtoTxt.pb.m */,
-				807343751B504B3C00A898CC /* GtfsRealtime.pb.h */,
-				807343731B504B3300A898CC /* GtfsRealtime.pb.m */,
+				8073438F1B52FB1900A898CC /* WTLScheduleTableViewCell.h */,
+				807343901B52FB1900A898CC /* WTLScheduleTableViewCell.m */,
+				807343831B506B2D00A898CC /* WTLtransitAPI.h */,
+				807343841B506B2D00A898CC /* WTLtransitAPI.m */,
+				807343921B53F0D000A898CC /* WTLScheduleTableView.h */,
+				807343931B53F0D000A898CC /* WTLScheduleTableView.m */,
+				807343861B51392200A898CC /* WTLStation.h */,
+				807343871B51392200A898CC /* WTLStation.m */,
+				807343891B51452B00A898CC /* WTLStationManager.h */,
+				8073438A1B51452B00A898CC /* WTLStationManager.m */,
+				8073438C1B52B44700A898CC /* WTLLocationManager.h */,
+				8073438D1B52B44700A898CC /* WTLLocationManager.m */,
+				802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */,
+				807343791B50514D00A898CC /* Protocol Classes */,
 				807343541B502B8300A898CC /* Main.storyboard */,
 				807343571B502B8300A898CC /* Images.xcassets */,
 				807343591B502B8300A898CC /* LaunchScreen.xib */,
@@ -151,6 +220,17 @@
 				807343651B502B8300A898CC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		807343791B50514D00A898CC /* Protocol Classes */ = {
+			isa = PBXGroup;
+			children = (
+				807343701B50443A00A898CC /* NyctSubwayProtoTxt.pb.h */,
+				807343711B50443A00A898CC /* NyctSubwayProtoTxt.pb.m */,
+				807343751B504B3C00A898CC /* GtfsRealtime.pb.h */,
+				807343731B504B3300A898CC /* GtfsRealtime.pb.m */,
+			);
+			name = "Protocol Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,10 +368,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807343941B53F0D000A898CC /* WTLScheduleTableView.m in Sources */,
+				807343881B51392200A898CC /* WTLStation.m in Sources */,
 				807343531B502B8300A898CC /* ViewController.m in Sources */,
+				8073438E1B52B44700A898CC /* WTLLocationManager.m in Sources */,
+				802F5DA51B554B0C003627C3 /* FBMissingSymbols.m in Sources */,
 				807343501B502B8300A898CC /* AppDelegate.m in Sources */,
 				8073434D1B502B8300A898CC /* main.m in Sources */,
+				807343781B5050B200A898CC /* WTLConstants.m in Sources */,
+				807343851B506B2D00A898CC /* WTLtransitAPI.m in Sources */,
+				8073438B1B51452B00A898CC /* WTLStationManager.m in Sources */,
 				807343721B50443A00A898CC /* NyctSubwayProtoTxt.pb.m in Sources */,
+				807343911B52FB1900A898CC /* WTLScheduleTableViewCell.m in Sources */,
 				807343741B504B3300A898CC /* GtfsRealtime.pb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +509,10 @@
 			baseConfigurationReference = 54DB7F79B0AA0DCDB1080A81 /* Pods-WhereTheL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WhereTheL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +524,10 @@
 			baseConfigurationReference = FBF56B0769BD100FED3FBC98 /* Pods-WhereTheL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WhereTheL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,7 +7,15 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import "WTLStationManager.h"
 
 @interface WTLLocationManager : CLLocationManager
+
+@property (strong, nonatomic) WTLStationManager *stationManager;
+@property (strong, nonatomic) WTLStation *nearestStation;
+
+-(instancetype) init;
+
+-(WTLStation *) nearestStation;
 
 @end

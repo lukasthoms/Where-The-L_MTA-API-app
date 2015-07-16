@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NyctSubwayProtoTxt.pb.h"
 
 @interface WTLtransitAPI : NSObject
+
+@property (strong, nonatomic) NSArray *vehicleEntities;
+@property (strong, nonatomic) NSArray *tripEntities;
+
++ (id)sharedData;
+
+-(void) refreshMTADataWithCompletion: (void (^) (FeedMessage *message))completion;
+
+-(void) retrieveAPIDataFromParseWithCompletion: (void (^)(FeedMessage *message))completion;
 
 @end

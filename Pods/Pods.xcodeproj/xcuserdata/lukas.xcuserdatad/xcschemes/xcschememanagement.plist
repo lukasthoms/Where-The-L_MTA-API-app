@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-WhereTheL-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WhereTheL-FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WhereTheL-ProtocolBuffers.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4B4F89384E14AAC1EA99C911</key>
+		<key>286E0E115A760F73466895E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8DB5855F25659D0EA2395DA</key>
+		<key>A0641C82DC763CEB0AAE1AC4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B71B5E5EDB1098D54CBF9DDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F215E02B7F9BD4FCD9F0B30B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

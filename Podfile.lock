@@ -1,10 +1,24 @@
 PODS:
+  - Bolts (1.1.5):
+    - Bolts/AppLinks (= 1.1.5)
+    - Bolts/Tasks (= 1.1.5)
+  - Bolts/AppLinks (1.1.5):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.1.5)
+  - FlatUIKit (1.6.2)
+  - Parse-iOS-SDK (1.3.0):
+    - Bolts (~> 1.1.2)
   - ProtocolBuffers (1.9.8)
 
 DEPENDENCIES:
+  - FlatUIKit
+  - Parse-iOS-SDK
   - ProtocolBuffers
 
 SPEC CHECKSUMS:
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
+  Parse-iOS-SDK: f82937a6e1431a49438cd7d9d6199c74228a5846
   ProtocolBuffers: 9a4a171c0c7cc8f21dd29aeca4f9ac775d84a880
 
 COCOAPODS: 0.37.1

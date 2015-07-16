@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const MTA_KEY;
+
 @interface WTLConstants : NSObject
 
 @end
