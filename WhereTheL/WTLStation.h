@@ -25,6 +25,6 @@
 
 -(void) updateStationSchedule;
 
--(void) getWalkingTimeToStationUsingLocation: (CLLocation*)location Completion: (void (^)(double seconds))completionHandler;
+-(void) getWalkingDirectionsWithTimeToStationUsingLocation: (CLLocation*)location Completion: (void (^)(double seconds, NSArray *routes))completionHandler;
 
 @end

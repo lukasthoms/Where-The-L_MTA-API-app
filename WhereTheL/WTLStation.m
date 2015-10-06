@@ -95,7 +95,7 @@
     [self updateStationScheduleWithCompletion:^(NSArray *allStopUpdates) {    }];
 }
 
--(void) getWalkingTimeToStationUsingLocation: (CLLocation*)location Completion: (void (^)(double seconds))completionHandler {
+-(void) getWalkingDirectionsWithTimeToStationUsingLocation: (CLLocation*)location Completion: (void (^)(double seconds, NSArray *routes))completionHandler {
     
     MKPlacemark *stationPlacemark = [[MKPlacemark alloc] initWithCoordinate:self.location.coordinate addressDictionary:nil];
     MKMapItem *stationMapItem = [[MKMapItem alloc] initWithPlacemark:stationPlacemark];
@@ -116,7 +116,7 @@
         for (MKRoute *route in response.routes) {
             walkingTimeInSeconds += (double)route.expectedTravelTime;
         }
-        completionHandler(walkingTimeInSeconds);
+        completionHandler(walkingTimeInSeconds, response.routes);
     }];
 }
 

@@ -12,13 +12,15 @@
 #import <MapKit/MapKit.h>
 #import "WTLScheduleTableView.h"
 #import "WTLtransitAPI.h"
+#import "MKMapView+WTLMap.h"
 
-@interface ViewController ()
+@interface ViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet WTLScheduleTableView *scheduleTableView;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
 @property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *walkingDistanceLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -35,6 +37,8 @@
     self.walkingDistanceLabel.text = @"";
     self.scheduleTableView.delegate = self;
     self.scheduleTableView.dataSource = self;
+    self.scheduleTableView.separatorColor = [UIColor clearColor];
+    self.mapView.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"BecameActive"
@@ -70,10 +74,13 @@
     [self.locationManager nearestStation];
     if (![self.locationManager.nearestStation.name isEqual:self.stationLabel.text]) {
         self.stationLabel.text = self.locationManager.nearestStation.name;
-        [self.locationManager.nearestStation updateStationScheduleWithCompletion:^(NSArray *allStopUpdates) {
-        }];
-        [self.locationManager.nearestStation getWalkingTimeToStationUsingLocation:self.locationManager.location Completion:^(double seconds) {
+        [self.locationManager.nearestStation updateStationScheduleWithCompletion:^(NSArray *allStopUpdates) { }];
+        [self.mapView setupMapRegionWithCurrentLocation:self.locationManager.location storeLocation:self.locationManager.nearestStation.location];
+        [self.locationManager.nearestStation getWalkingDirectionsWithTimeToStationUsingLocation:self.locationManager.location Completion:^(double seconds, NSArray *routes) {
             self.walkingDistanceLabel.text = [NSString stringWithFormat: @"You are a %.0f minute walk away", (seconds/60)];
+            for (MKRoute *route in routes) {
+                [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+            }
         }];
     }
     [self.scheduleTableView reloadData];
@@ -184,6 +191,18 @@
             self.locationManager.nearestStation.southBoundSchedule = newSchedule;
         }
     }
+}
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+        [renderer setStrokeColor:[UIColor blueColor]];
+        [renderer setLineWidth:5.0];
+        return renderer;
+    }
+    return nil;
+    
 }
 
 
