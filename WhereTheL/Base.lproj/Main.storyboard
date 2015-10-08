@@ -18,8 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fui-2c-nfm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Finding Closest L Station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-k2-Fd5">
+                                        <rect key="frame" x="0.0" y="25" width="600" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-rb-yP4">
+                                        <rect key="frame" x="0.0" y="48" width="600" height="16"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.079164785710000005" green="0.95246596139999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="z2T-k2-Fd5" secondAttribute="centerX" id="3ct-J0-IAj"/>
+                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="width" secondItem="Fui-2c-nfm" secondAttribute="width" id="6ct-M8-ODB"/>
+                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="centerX" secondItem="hIv-rb-yP4" secondAttribute="centerX" id="V0C-n1-bwk"/>
+                                    <constraint firstAttribute="centerY" secondItem="z2T-k2-Fd5" secondAttribute="centerY" constant="-2" id="X7B-2c-q4d"/>
+                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="width" secondItem="hIv-rb-yP4" secondAttribute="width" id="Zw5-k2-y95"/>
+                                    <constraint firstAttribute="centerY" secondItem="hIv-rb-yP4" secondAttribute="centerY" constant="-22" id="jww-8O-lvT"/>
+                                    <constraint firstAttribute="height" constant="67" id="n5x-az-RgO"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-rU-gdA" customClass="WTLScheduleTableView">
-                                <rect key="frame" x="0.0" y="67" width="600" height="381"/>
+                                <rect key="frame" x="0.0" y="219" width="600" height="381"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.3630016278" blue="0.53253624889999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,38 +98,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fui-2c-nfm">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Finding Closest L Station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2T-k2-Fd5">
-                                        <rect key="frame" x="0.0" y="25" width="600" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-rb-yP4">
-                                        <rect key="frame" x="0.0" y="48" width="600" height="16"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" red="0.079164785710000005" green="0.95246596139999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="z2T-k2-Fd5" secondAttribute="centerX" id="3ct-J0-IAj"/>
-                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="width" secondItem="Fui-2c-nfm" secondAttribute="width" id="6ct-M8-ODB"/>
-                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="centerX" secondItem="hIv-rb-yP4" secondAttribute="centerX" id="V0C-n1-bwk"/>
-                                    <constraint firstAttribute="centerY" secondItem="z2T-k2-Fd5" secondAttribute="centerY" constant="-2" id="X7B-2c-q4d"/>
-                                    <constraint firstItem="z2T-k2-Fd5" firstAttribute="width" secondItem="hIv-rb-yP4" secondAttribute="width" id="Zw5-k2-y95"/>
-                                    <constraint firstAttribute="centerY" secondItem="hIv-rb-yP4" secondAttribute="centerY" constant="-22" id="jww-8O-lvT"/>
-                                    <constraint firstAttribute="height" constant="67" id="n5x-az-RgO"/>
-                                </constraints>
-                            </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-WH-snO">
-                                <rect key="frame" x="0.0" y="448" width="600" height="152"/>
+                                <rect key="frame" x="0.0" y="67" width="600" height="152"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="152" id="Usn-Le-Wdz"/>
@@ -109,15 +109,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9hg-WH-snO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="0kI-JE-Aqi"/>
+                            <constraint firstItem="oyf-rU-gdA" firstAttribute="top" secondItem="9hg-WH-snO" secondAttribute="bottom" id="0so-aa-gF9"/>
+                            <constraint firstItem="9hg-WH-snO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8dS-UW-ad6"/>
+                            <constraint firstItem="9hg-WH-snO" firstAttribute="top" secondItem="Fui-2c-nfm" secondAttribute="bottom" id="9FO-Ea-KUY"/>
                             <constraint firstAttribute="width" secondItem="Fui-2c-nfm" secondAttribute="width" id="J0I-Ni-Fbu"/>
-                            <constraint firstItem="oyf-rU-gdA" firstAttribute="top" secondItem="Fui-2c-nfm" secondAttribute="bottom" id="Qjg-eh-71C"/>
-                            <constraint firstItem="oyf-rU-gdA" firstAttribute="bottom" secondItem="9hg-WH-snO" secondAttribute="top" id="QuA-6l-uoE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oyf-rU-gdA" secondAttribute="bottom" id="Mhl-dP-Kxf"/>
                             <constraint firstAttribute="centerX" secondItem="oyf-rU-gdA" secondAttribute="centerX" id="Zs4-Lb-sBN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9hg-WH-snO" secondAttribute="bottom" id="bm4-Ig-EV8"/>
                             <constraint firstItem="Fui-2c-nfm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="e2b-Oc-cWx"/>
                             <constraint firstItem="oyf-rU-gdA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eXW-JB-1TZ"/>
-                            <constraint firstItem="9hg-WH-snO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p7m-Sb-zXe"/>
+                            <constraint firstItem="9hg-WH-snO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gad-NB-Jxt"/>
                         </constraints>
                     </view>
                     <connections>
