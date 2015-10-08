@@ -81,7 +81,7 @@ THE SOFTWARE.</string>
 			<key>FooterText</key>
 			<string>See https://www.parse.com/about/terms</string>
 			<key>Title</key>
-			<string>Parse-iOS-SDK</string>
+			<string>Parse</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

@@ -14,6 +14,7 @@
 #import "WTLtransitAPI.h"
 #import "MKMapView+WTLMap.h"
 
+
 @interface ViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet WTLScheduleTableView *scheduleTableView;
@@ -119,7 +120,7 @@
 - (UIView *) tableView: (UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
     /* Create custom view to display section header... */
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, tableView.frame.size.width, 18)];
     [label setFont:[UIFont flatFontOfSize:17]];
     NSString *string = @"";
     if (section == 0) {
@@ -131,7 +132,7 @@
 //    label.textAlignment = NSTextAlignmentCenter;
     [label setText:string];
     [view addSubview:label];
-    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background color...
+    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:0.7]]; //your background color...
     return view;
 }
 

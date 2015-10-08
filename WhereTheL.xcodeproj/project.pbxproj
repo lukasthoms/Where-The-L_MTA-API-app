@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		714F9BA9CD48F1564763B58E /* libPods-WhereTheL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEAEA395A9F3DE03C332B21 /* libPods-WhereTheL.a */; };
 		801DFBAE1BC461AB00EE8CFB /* MKMapView+WTLMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 801DFBAD1BC461AB00EE8CFB /* MKMapView+WTLMap.m */; settings = {ASSET_TAGS = (); }; };
-		802F5DA51B554B0C003627C3 /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */; };
 		8073434D1B502B8300A898CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073434C1B502B8300A898CC /* main.m */; };
 		807343501B502B8300A898CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8073434F1B502B8300A898CC /* AppDelegate.m */; };
 		807343531B502B8300A898CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807343521B502B8300A898CC /* ViewController.m */; };
@@ -42,24 +41,6 @@
 		54DB7F79B0AA0DCDB1080A81 /* Pods-WhereTheL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereTheL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhereTheL/Pods-WhereTheL.debug.xcconfig"; sourceTree = "<group>"; };
 		801DFBAC1BC461AB00EE8CFB /* MKMapView+WTLMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+WTLMap.h"; sourceTree = "<group>"; };
 		801DFBAD1BC461AB00EE8CFB /* MKMapView+WTLMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+WTLMap.m"; sourceTree = "<group>"; };
-		802F5D7C1B554705003627C3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		802F5D7E1B55470C003627C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		802F5D801B554712003627C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		802F5D821B554718003627C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		802F5D841B554731003627C3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		802F5D861B554737003627C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		802F5D881B554742003627C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		802F5D8A1B554751003627C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		802F5D8C1B554759003627C3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		802F5D8E1B554762003627C3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		802F5D901B55476A003627C3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		802F5D921B55476F003627C3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		802F5D941B55478A003627C3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		802F5D951B55478A003627C3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		802F5D961B55478A003627C3 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		802F5D981B55478A003627C3 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		802F5D991B55478A003627C3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
 		807343471B502B8300A898CC /* WhereTheL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereTheL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8073434B1B502B8300A898CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8073434C1B502B8300A898CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,23 +107,6 @@
 		3CE76A82271BA184FA8DBF06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				802F5D941B55478A003627C3 /* Bolts.framework */,
-				802F5D951B55478A003627C3 /* Parse.framework */,
-				802F5D961B55478A003627C3 /* ParseCrashReporting.framework */,
-				802F5D981B55478A003627C3 /* ParseFacebookUtilsV4.framework */,
-				802F5D991B55478A003627C3 /* ParseUI.framework */,
-				802F5D921B55476F003627C3 /* Social.framework */,
-				802F5D901B55476A003627C3 /* Accounts.framework */,
-				802F5D8E1B554762003627C3 /* libsqlite3.dylib */,
-				802F5D8C1B554759003627C3 /* libz.dylib */,
-				802F5D8A1B554751003627C3 /* SystemConfiguration.framework */,
-				802F5D881B554742003627C3 /* Security.framework */,
-				802F5D861B554737003627C3 /* CoreLocation.framework */,
-				802F5D841B554731003627C3 /* MobileCoreServices.framework */,
-				802F5D821B554718003627C3 /* QuartzCore.framework */,
-				802F5D801B554712003627C3 /* CoreGraphics.framework */,
-				802F5D7E1B55470C003627C3 /* StoreKit.framework */,
-				802F5D7C1B554705003627C3 /* AudioToolbox.framework */,
 				AFEAEA395A9F3DE03C332B21 /* libPods-WhereTheL.a */,
 			);
 			name = Frameworks;
@@ -189,7 +153,6 @@
 				8073438A1B51452B00A898CC /* WTLStationManager.m */,
 				8073438C1B52B44700A898CC /* WTLLocationManager.h */,
 				8073438D1B52B44700A898CC /* WTLLocationManager.m */,
-				802F5DA41B554B0C003627C3 /* FBMissingSymbols.m */,
 				801DFBAC1BC461AB00EE8CFB /* MKMapView+WTLMap.h */,
 				801DFBAD1BC461AB00EE8CFB /* MKMapView+WTLMap.m */,
 				807343791B50514D00A898CC /* Protocol Classes */,
@@ -378,7 +341,6 @@
 				801DFBAE1BC461AB00EE8CFB /* MKMapView+WTLMap.m in Sources */,
 				807343531B502B8300A898CC /* ViewController.m in Sources */,
 				8073438E1B52B44700A898CC /* WTLLocationManager.m in Sources */,
-				802F5DA51B554B0C003627C3 /* FBMissingSymbols.m in Sources */,
 				807343501B502B8300A898CC /* AppDelegate.m in Sources */,
 				8073434D1B502B8300A898CC /* main.m in Sources */,
 				807343781B5050B200A898CC /* WTLConstants.m in Sources */,
