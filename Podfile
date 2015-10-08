@@ -6,6 +6,7 @@ target 'WhereTheL' do
 pod 'ProtocolBuffers'
 pod 'FlatUIKit'
 pod 'Parse'
+pod 'Masonry'
 
 end
 

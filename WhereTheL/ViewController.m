@@ -13,7 +13,7 @@
 #import "WTLScheduleTableView.h"
 #import "WTLtransitAPI.h"
 #import "MKMapView+WTLMap.h"
-
+#import <Masonry.h>
 
 @interface ViewController () <MKMapViewDelegate>
 
