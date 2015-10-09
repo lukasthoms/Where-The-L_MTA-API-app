@@ -49,6 +49,8 @@
                 }
             }
         }
+        NSLog(@"northbound:    %@", northboundTimeUpdateSchedule);
+        NSLog(@"soundbound:    %@", southboundTimeUpdateSchedule);
         NSMutableArray *northboundSchedule = [@[]mutableCopy];
         NSMutableArray *southboundSchedule = [@[]mutableCopy];
         
@@ -81,8 +83,12 @@
             }
         }
         
-        self.southBoundSchedule = southboundSchedule;
-        self.northBoundSchedule = northboundSchedule;
+        NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"timeIntervalSinceNow" ascending:YES];
+        [northboundSchedule sortUsingDescriptors:@[sorter]];
+        [southboundSchedule sortUsingDescriptors:@[sorter]];
+        
+        self.southBoundSchedule = [southboundSchedule copy];
+        self.northBoundSchedule = [northboundSchedule copy];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dataRefresh" object:self];
         completion(allStopUpdates);
         
@@ -137,6 +143,59 @@
             self.southBoundSchedule = newSchedule;
         }
     }
+}
+
+-(NSDictionary *)southboundArrivalsIntervals {
+    if (self.southBoundSchedule) {
+        return [self calculateMinutesApart:self.southBoundSchedule];
+    } else {
+        return nil;
+    }
+    
+}
+
+-(NSDictionary *)northboundArrivalsIntervals {
+    if (self.northBoundSchedule) {
+        return [self calculateMinutesApart:self.northBoundSchedule];
+    } else {
+        return nil;
+    }
+}
+
+-(NSDictionary *)calculateMinutesApart:(NSArray *)schedule {
+    if (schedule.count < 2) {
+        return nil;
+    }
+    NSUInteger count = schedule.count - 1;
+    if (count > 6) {
+        count = 6;
+    }
+    double firstTotal = 0;
+    double firstCount = 0;
+    for (NSUInteger i = 0; i < count; i+=2) {
+        NSDate *stop = schedule[i+1];
+        firstTotal += [stop timeIntervalSinceDate:schedule[i]];
+        firstCount++;
+    }
+    double firstTime = firstTotal / firstCount;
+    
+    double secondTotal = 0;
+    double secondCount = 0;
+    for (NSUInteger i = 1; i < count; i+=2) {
+        NSDate *stop = schedule[i+1];
+        secondTotal += [stop timeIntervalSinceDate:schedule[i]];
+        secondCount++;
+    }
+    double secondTime = secondTotal / secondCount;
+    
+    if ((firstTime/60)-(secondTime/60) < 1) {
+        NSNumber *result = @(@(((firstTime+secondTime)/120) + 0.5).integerValue);
+        return @{ @"averageInterval" : result };
+    } else {
+        return @{ @"firstInterval" : @(@((firstTime/60) + 0.5).integerValue),
+                  @"secondInterval" : @(@((secondTime/60) + 0.5).integerValue) };
+    }
+    
 }
 
 @end

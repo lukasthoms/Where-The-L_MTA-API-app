@@ -5,12 +5,14 @@ PODS:
   - Parse (1.9.0):
     - Bolts/Tasks (>= 1.3.0)
   - ProtocolBuffers (1.9.8)
+  - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - FlatUIKit
   - Masonry
   - Parse
   - ProtocolBuffers
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
@@ -18,5 +20,6 @@ SPEC CHECKSUMS:
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   Parse: 712efbc476d4f47b0f96b70db7e53101575753aa
   ProtocolBuffers: 9a4a171c0c7cc8f21dd29aeca4f9ac775d84a880
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.38.2

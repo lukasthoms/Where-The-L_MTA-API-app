@@ -27,4 +27,7 @@
 
 -(void) getWalkingDirectionsWithTimeToStationUsingLocation: (CLLocation*)location Completion: (void (^)(double seconds, NSArray *routes))completionHandler;
 
+-(NSDictionary *)southboundArrivalsIntervals;
+-(NSDictionary *)northboundArrivalsIntervals;
+
 @end
