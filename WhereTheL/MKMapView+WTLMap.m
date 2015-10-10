@@ -10,7 +10,7 @@
 
 @implementation MKMapView (WTLMap)
 
--(void)setupMapRegionWithCurrentLocation:(CLLocation *)currentLocation storeLocation:(CLLocation *)storeLocation {
+-(void)setupMapRegionWithCurrentLocation:(CLLocation *)currentLocation stationLocation:(CLLocation *)storeLocation {
     double latDiff = currentLocation.coordinate.latitude - storeLocation.coordinate.latitude;
     double longDiff = currentLocation.coordinate.longitude - storeLocation.coordinate.longitude;
     

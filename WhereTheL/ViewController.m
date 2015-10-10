@@ -24,23 +24,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *walkingDistanceLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (nonatomic) BOOL reloadSuspended;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.locationManager = [[WTLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
+
     self.stationLabel.font = [UIFont flatFontOfSize:20];
-    self.walkingDistanceLabel.font = [UIFont flatFontOfSize:13];
-    self.walkingDistanceLabel.text = @"";
-    self.scheduleTableView.delegate = self;
-    self.scheduleTableView.dataSource = self;
-    self.scheduleTableView.separatorColor = [UIColor clearColor];
-    self.mapView.delegate = self;
+    [self locationSetup];
+    [self tableViewSetup];
     [SVProgressHUD show];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTestNotification:)
@@ -50,11 +45,27 @@
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"dataRefresh"
                                                object:nil];
+}
+
+-(void)tableViewSetup {
+    self.scheduleTableView.delegate = self;
+    self.scheduleTableView.dataSource = self;
+    self.scheduleTableView.separatorColor = [UIColor clearColor];
+    self.reloadSuspended = NO;
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.scheduleTableView addSubview:refreshControl];
-    
+}
 
+-(void)locationSetup {
+    self.locationManager = [[WTLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
+    self.walkingDistanceLabel.font = [UIFont flatFontOfSize:13];
+    self.walkingDistanceLabel.text = @"";
+    self.mapView.delegate = self;
 }
 
 -(void) dealloc {
@@ -76,16 +87,18 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [self.locationManager nearestStation];
-    [self removePastStopsFromSchedule];
-    [self.scheduleTableView reloadData];
-
+    [self.locationManager.nearestStation removePastStopsFromSchedule];
+    if (!self.reloadSuspended) {
+        [self.scheduleTableView reloadData];
+    }
+    
     if (![self.locationManager.nearestStation.name isEqual:self.stationLabel.text]) {
         [SVProgressHUD show];
         self.stationLabel.text = self.locationManager.nearestStation.name;
         [self.locationManager.nearestStation updateStationScheduleWithCompletion:^(NSArray *allStopUpdates) {
             [SVProgressHUD dismiss];
         }];
-        [self.mapView setupMapRegionWithCurrentLocation:self.locationManager.location storeLocation:self.locationManager.nearestStation.location];
+        [self.mapView setupMapRegionWithCurrentLocation:self.locationManager.location stationLocation:self.locationManager.nearestStation.location];
         [self updateWalkingDirections];
         
     }
@@ -103,13 +116,6 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    NSInteger numberOfSections = 0;
-//    if (![self.locationManager.nearestStation.southBoundSchedule isEqual:@[]]) {
-//        numberOfSections += 1;
-//    }
-//    if (![self.locationManager.nearestStation.northBoundSchedule isEqual:@[]]) {
-//        numberOfSections += 1;
-//    }
     return 2;
 }
 
@@ -132,10 +138,10 @@
 
 
 - (UIView *) tableView: (UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
+    /* build view */
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
     [view setBackgroundColor:[UIColor colorWithRed:186/255.0 green:197/255.0 blue:206/255.0 alpha:1]];
-    
+    /* build direction label */
     UILabel *label = [[UILabel alloc] init];
     [label setFont:[UIFont flatFontOfSize:17]];
     NSString *string = @"";
@@ -144,14 +150,13 @@
     } else {
         string = @"Brooklyn Bound";
     }
-
     [label setText:string];
     [view addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(view.mas_centerY);
         make.left.equalTo(view.mas_left).with.offset(8);
     }];
-    
+    /* build interval label */
     UILabel *interval = [[UILabel alloc] init];
     [interval setFont:[UIFont flatFontOfSize:17]];
     NSString *intervalString = @"";
@@ -181,19 +186,20 @@
     WTLScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"scheduleCell" forIndexPath:indexPath];
     cell.scheduleLabel.font = [UIFont flatFontOfSize:15];
     cell.arrivalTime.font = [UIFont flatFontOfSize:15];
+    
+    NSDate *dateForView;
+    if (indexPath.section == 0) {
+        dateForView = self.locationManager.nearestStation.northBoundSchedule[indexPath.row];
+
+    } else {
+        dateForView = self.locationManager.nearestStation.southBoundSchedule[indexPath.row];
+    }
+    cell.scheduleLabel.text = [NSString stringWithFormat:@"%.0f minutes away", ([dateForView timeIntervalSinceNow]/60)];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = NSDateFormatterNoStyle;
     formatter.timeStyle = NSDateFormatterShortStyle;
-    if (indexPath.section == 0) {
-        NSDate *dateForView = self.locationManager.nearestStation.northBoundSchedule[indexPath.row];
-        cell.scheduleLabel.text = [NSString stringWithFormat:@"%.0f minutes away", ([dateForView timeIntervalSinceNow]/60)];
-        cell.arrivalTime.text = [NSString stringWithFormat:@"arriving at %@", [formatter stringFromDate:dateForView]];
-
-    } else {
-        NSDate *dateForView = self.locationManager.nearestStation.southBoundSchedule[indexPath.row];
-        cell.scheduleLabel.text = [NSString stringWithFormat:@"%.0f minutes away", ([dateForView timeIntervalSinceNow]/60)];
-        cell.arrivalTime.text = [NSString stringWithFormat:@"arriving at %@", [formatter stringFromDate:dateForView]];
-    }
+    cell.arrivalTime.text = [NSString stringWithFormat:@"arriving at %@", [formatter stringFromDate:dateForView]];
     return cell;
 }
 
@@ -202,7 +208,7 @@
     if ([[notification name] isEqualToString:@"BecameActive"]) {
         [self.locationManager startUpdatingLocation];
     }
-    if ([[notification name] isEqualToString:@"dataRefresh"]) {
+    if ([[notification name] isEqualToString:@"dataRefresh"] && !self.reloadSuspended) {
         [self.scheduleTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
     }
     
@@ -215,26 +221,6 @@
     }];
     
     
-}
-
--(void)removePastStopsFromSchedule {
-    if (![self.locationManager.nearestStation.northBoundSchedule isEqualToArray:@[]]) {
-        NSDate *dateForView = self.locationManager.nearestStation.northBoundSchedule[0];
-        if ([dateForView timeIntervalSinceNow] < 0) {
-            NSMutableArray *newSchedule = [self.locationManager.nearestStation.northBoundSchedule mutableCopy];
-            [newSchedule removeObject:[newSchedule firstObject]];
-            self.locationManager.nearestStation.northBoundSchedule = newSchedule;
-        }
-    }
-    if (![self.locationManager.nearestStation.southBoundSchedule isEqualToArray:@[]]) {
-        NSDate *dateForView = self.locationManager.nearestStation.southBoundSchedule[0];
-        if ([dateForView timeIntervalSinceNow] < 0) {
-            NSMutableArray *newSchedule = [self.locationManager.nearestStation.southBoundSchedule mutableCopy];
-            [newSchedule removeObject:[newSchedule firstObject]];
-            self.locationManager.nearestStation.southBoundSchedule = newSchedule;
-        }
-    }
-
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {

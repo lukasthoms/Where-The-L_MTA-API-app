@@ -37,7 +37,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.079164785710000005" green="0.95246596139999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.12941176470588237" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="z2T-k2-Fd5" secondAttribute="centerX" id="3ct-J0-IAj"/>
                                     <constraint firstItem="z2T-k2-Fd5" firstAttribute="width" secondItem="Fui-2c-nfm" secondAttribute="width" id="6ct-M8-ODB"/>
@@ -51,7 +51,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-rU-gdA" customClass="WTLScheduleTableView">
                                 <rect key="frame" x="0.0" y="219" width="600" height="381"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.3630016278" blue="0.53253624889999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" id="MrP-w3-D10" customClass="WTLScheduleTableViewCell">

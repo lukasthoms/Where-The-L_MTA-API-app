@@ -10,6 +10,6 @@
 
 @interface MKMapView (WTLMap)
 
--(void)setupMapRegionWithCurrentLocation:(CLLocation *)currentLocation storeLocation:(CLLocation *)storeLocation;
+-(void)setupMapRegionWithCurrentLocation:(CLLocation *)currentLocation stationLocation:(CLLocation *)storeLocation;
 
 @end
